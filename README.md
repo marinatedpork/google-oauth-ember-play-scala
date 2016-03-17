@@ -38,21 +38,21 @@ Within it you will find a single page web application that demonstrates the foll
 
     # conf/application.conf
     
-    google-oauth-2 : {
-      web : {
-        client_id     : "YOUR VALUE",
-        auth_uri      : "YOUR VALUE",
-        token_uri     : "YOUR VALUE",
-        auth_provider_x509_cert_url : "YOUR VALUE",
-        client_secret : "YOUR VALUE",
-        redirect_uris : [
-          "YOUR VALUE"
-        ],
-        javascript_origins : [
-          "YOUR VALUE"
-        ]
-      }
-    }
+        google-oauth-2 : {
+          web : {
+            client_id     : "YOUR VALUE",
+            auth_uri      : "YOUR VALUE",
+            token_uri     : "YOUR VALUE",
+            auth_provider_x509_cert_url : "YOUR VALUE",
+            client_secret : "YOUR VALUE",
+            redirect_uris : [
+              "YOUR VALUE"
+            ],
+            javascript_origins : [
+              "YOUR VALUE"
+            ]
+          }
+        }
 
 
  Once you have Ember CLI and Activator installed, run the application:
