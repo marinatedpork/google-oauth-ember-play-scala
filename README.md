@@ -57,16 +57,16 @@ Within it you will find a single page web application that demonstrates the foll
 
  Once you have Ember CLI and Activator installed, run the application:
 
-    activator run
+        activator run
 
-    # visit localhost:9000
+        # visit localhost:9000
 
   If you want to run the Ember Server too, leave that process running and:
 
-    cd ember/oauth-google-ember/
-    npm install
-    bower install (press the third option if it gives you trouble on the packages)
-    ember server
+        cd ember/oauth-google-ember/
+        npm install
+        bower install (press the third option if it gives you trouble on the packages)
+        ember server
 
 **At this point both the Activator and Ember CLI servers are running, so any source changes in either will result in an automatic rebuild.**
 
