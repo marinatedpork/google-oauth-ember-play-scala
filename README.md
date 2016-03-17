@@ -36,7 +36,7 @@ Within it you will find a single page web application that demonstrates the foll
  * Save and download the credentials as JSON.
  * Add the credentials object to your configuration file, and make sure to name the key as it is below:
 
-        \# conf/application.conf
+        # conf/application.conf
     
         google-oauth-2 : {
           web : {
