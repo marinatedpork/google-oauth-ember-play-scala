@@ -1,7 +1,7 @@
 ## Scala Play OAuth 2.0 Google Ember.js Ember-CLI Liquid Fire
 
 This repository is meant to be an example of a few features and packages I find useful and interesting.
-Within it you will find a single page web application that demonstrates the follow:
+Within it you will find a single page web application that demonstrates the following:
 
 ##### Backend:
 
