@@ -1,0 +1,10 @@
+GET /                                                  controllers.Application.index(path = "")
+GET /workbooks                                         controllers.Application.index(path = "")
+GET /workbooks/                                        controllers.Application.index(path = "")
+GET /workbooks/*path                                   controllers.Application.index(path)
+GET /xhr/workbooks                                     controllers.Application.workbooks
+GET /xhr/workbooks/*workbookId/worksheets/*worksheetId controllers.Application.worksheet(workbookId, worksheetId)
+GET /xhr/workbooks/*workbookId                         controllers.Application.workbook(workbookId)
+GET /startAuth                                         controllers.OAuth2Controller.redirect
+GET /authenticate                                      controllers.OAuth2Controller.authenticate
+GET /assets/*file                                      controllers.Assets.at(path = "/public", file)

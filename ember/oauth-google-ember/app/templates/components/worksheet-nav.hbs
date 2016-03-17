@@ -1,0 +1,8 @@
+{{#each worksheets as |worksheet|}}
+	{{#link-to "workbook.worksheet" worksheet.workbook worksheet
+		tagName="li"
+		classNames="fadeInLeft wow"
+	}}
+		<a href={{view.href}}>{{worksheet.title}}</a>
+	{{/link-to}}
+{{/each}}

@@ -1,0 +1,40 @@
+.page-header i:hover ,
+ .page-header i:focus ,
+ .page-header i:active {
+	font-style: none;
+	color: #337AB7;
+}
+.page-header small {
+	font-size: 44px;
+	font-family: 'Gotham';
+}
+.application-header {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: baseline;
+	-webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.fa-file-excel-o {
+	font-size: 40px;
+	margin-right: 20px;
+}
+.workbook-title {
+	font-size: 24px;
+	color: #A8A8A8;
+}
+.loading-spinner {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	padding-top: 40px;
+	opacity: 0.35;
+	font-size: 18px;
+	color: #DDDDDD;
+}
+.liquid-child {
+	display: inline;
+}

@@ -1,0 +1,5 @@
+{{#if currentlyLoading}}
+	{{loading-spinner}}
+{{else}}
+	{{worksheet-table rows=model.rows}}
+{{/if}}

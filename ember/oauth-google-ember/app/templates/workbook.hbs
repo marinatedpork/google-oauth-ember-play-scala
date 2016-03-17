@@ -1,0 +1,6 @@
+{{#if currentlyLoading}}
+	{{loading-spinner}}
+{{else}}
+	{{worksheet-nav worksheets=model.worksheets}}
+	{{outlet}}
+{{/if}}

@@ -1,0 +1,11 @@
+{{#if currentlyLoading}}
+	{{loading-spinner}}
+{{else}}
+	<div class="container panel panel-default">
+	  <div class="panel-body">
+			{{#each model as |workbook|}}
+				{{workbook-list-item workbook=workbook}}
+			{{/each}}
+		</div>
+	</div>
+{{/if}}
