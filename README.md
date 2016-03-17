@@ -58,11 +58,6 @@ Within it you will find a single page web application that demonstrates the foll
  Once you have Ember CLI and Activator installed, run the application:
 
         activator run
-
-        # visit localhost:9000
-
-  If you want to run the Ember Server too, leave that process running and:
-
         cd ember/oauth-google-ember/
         npm install
         bower install (press the third option if it gives you trouble on the packages)
@@ -74,7 +69,6 @@ If you get a error regarding **FSEventStream**, quit any IDE's or Text Editors y
 
     activator
     ~ run
-    
     cd ember/oauth-google-ember/
     ember server
     
