@@ -20,7 +20,7 @@ import services.AuthenticatedRequest
  */
 
 class Application extends Controller with ServiceError with AuthenticatedRequest {
-  
+
   /**
    * Renders the index view and starts the show.
    * @param path  This is a catch all parameter for url persistence in Ember.
@@ -66,7 +66,7 @@ class Application extends Controller with ServiceError with AuthenticatedRequest
    * @param worksheetId  the ID of the worksheet to find.
    * @return a JSON formatted worksheet.
    */
-  
+
   def worksheet(workbookId: String, worksheetId: String) = Action.async { implicit request =>
     Future(Ok(authenticatedRequest { implicit cred =>
       Worksheet.find(workbookId, worksheetId) match {
@@ -75,5 +75,5 @@ class Application extends Controller with ServiceError with AuthenticatedRequest
       }
     }))
   }
-  
+
 }

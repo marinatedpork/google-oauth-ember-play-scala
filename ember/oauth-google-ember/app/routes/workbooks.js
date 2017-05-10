@@ -6,20 +6,20 @@ import Ember from 'ember';
  */
 
 export default Ember.Route.extend({
-	model() {
-		return this.store.findAll('workbook', {reload: true});
-	},
-	actions: {
-		loading(transition) {
-	    this.controllerFor('application').set('showTitle', false);
-	    let controller = this.controllerFor('workbook');
-	    controller.set('currentlyLoading', true);
-	    transition.promise.finally(() => {
-	      controller.set('currentlyLoading', false);
-	    });
-	  },
+  model() {
+    return this.store.findAll('workbook', {reload: true});
+  },
+  actions: {
+    loading(transition) {
+      this.controllerFor('application').set('showTitle', false);
+      let controller = this.controllerFor('workbook');
+      controller.set('currentlyLoading', true);
+      transition.promise.finally(() => {
+        controller.set('currentlyLoading', false);
+      });
+    },
     error() {
-    	return this.transitionTo('index', { queryParams: { error: 'true' }});
+      return this.transitionTo('index', { queryParams: { error: 'true' }});
     }
-	}
+  }
 });

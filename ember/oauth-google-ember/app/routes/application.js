@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	beforeModel() {
-	  return new WOW().init();
-	}
+  beforeModel() {
+    return new WOW().init();
+  }
 });

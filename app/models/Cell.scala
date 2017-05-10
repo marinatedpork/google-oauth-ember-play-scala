@@ -21,5 +21,5 @@ case class Cell(
 object Cell {
 
   implicit val cellFormat = Json.format[Cell]
-  
+
 }

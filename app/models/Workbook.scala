@@ -14,9 +14,9 @@ import com.google.gdata.data.spreadsheet.{
 import com.google.api.client.auth.oauth2.Credential
 
 case class Workbook(
-	id         : String = "",
+  id         : String = "",
   title      : String = "",
-	worksheets : Option[List[Worksheet]] = None
+  worksheets : Option[List[Worksheet]] = None
 )
 
 /**

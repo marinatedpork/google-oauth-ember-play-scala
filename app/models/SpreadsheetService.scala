@@ -31,12 +31,12 @@ trait SpreadsheetService {
    */
 
   protected def id[T <: { def getId():String }](gdata: T, key: String): String = gdata
-  	.getId
-  	.replace(s"https://spreadsheets.google.com/feeds/$key/", "")
+    .getId
+    .replace(s"https://spreadsheets.google.com/feeds/$key/", "")
 
   /**
    * This higher order function is where the implicit credential finally lands
-   * after being taken out of the session, refreshed, and passed through the models. 
+   * after being taken out of the session, refreshed, and passed through the models.
    * It sets the credential on a Google service object and tries to call whatever
    * function passed in, while wrapping it in an Option.
    * @tparam T         The type of resource you're trying to retrieve.
@@ -44,18 +44,18 @@ trait SpreadsheetService {
    * @param credential The implicit credential for accessing the resources
    * @return A instance of T wrapped in an option
    */
-	protected def get[T](f: GoogleSpreadsheetService => T)(implicit credential: Credential): Option[T] = {
-	  Logger.info(s"Fecthing resource.")
-	  val service = new GoogleSpreadsheetService("OAuth Google Ember")
-	  service.setOAuth2Credentials(credential)
-		try {
-			  Some(f(service))
-	  } catch {
-	    case e: ServiceException =>
-	    	Logger.error(s"Caught: Received error while getting resource")
-	    	Logger.error(s"$e, ${e.getResponseBody}")
-	    	None
-	  }
-	}
-	
+  protected def get[T](f: GoogleSpreadsheetService => T)(implicit credential: Credential): Option[T] = {
+    Logger.info(s"Fecthing resource.")
+    val service = new GoogleSpreadsheetService("OAuth Google Ember")
+    service.setOAuth2Credentials(credential)
+    try {
+        Some(f(service))
+    } catch {
+      case e: ServiceException =>
+        Logger.error(s"Caught: Received error while getting resource")
+        Logger.error(s"$e, ${e.getResponseBody}")
+        None
+    }
+  }
+
 }

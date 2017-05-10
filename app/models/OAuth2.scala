@@ -21,13 +21,13 @@ import com.google.api.client.auth.oauth2.Credential
  */
 
 object OAuth2 {
-  
+
   /**
    * retrieves config object from application conf as a
    * JSON Object.
    */
   private val config: JsObject = current.configuration.getObject("google-oauth-2") match {
-    case Some(configObj) => 
+    case Some(configObj) =>
       Logger.info("Successfully found OAuth 2.0 configuration")
       Json.parse(
         configObj.render(
@@ -49,7 +49,7 @@ object OAuth2 {
   /**
    * Scopes, JSON Factory, and HTTP Transport for token
    * request process.
-   * 
+   *
    * SCOPES: The one thing that you might have to
    * change, should you want to access different services
    * that require OAuth.
@@ -72,7 +72,7 @@ object OAuth2 {
   /**
    * This is the thing that actually communicates with authentication
    * severs and returns tokens. It is where all the magic happens.
-   * 
+   *
    * SCOPES: The one thing that you might have to change, should we
    * want to access different services that require OAuth.
    */
@@ -86,7 +86,7 @@ object OAuth2 {
   /**
    * Takes raw credential data as basic datatypes and returns a Google
    * Credential object composed of the raw credentials.
-   * 
+   *
    * @param accessToken   Temporary token retrieved via the refresh token.
    *                      This token is what actually allows us access.
    * @param refreshToken  Permanent token retrieved at the time of initial
@@ -116,7 +116,7 @@ object OAuth2 {
       CLIENT_ID,
       CLIENT_SECRET
     )
-    try { 
+    try {
       val tokenResponse = refreshRequest.execute
       flow.createAndStoreCredential(tokenResponse, null)
     } catch {
@@ -138,5 +138,5 @@ object OAuth2 {
     case Some(refreshToken) => Some(refresh(apply("", refreshToken, 0)))
     case None => None
   }
-  
+
 }

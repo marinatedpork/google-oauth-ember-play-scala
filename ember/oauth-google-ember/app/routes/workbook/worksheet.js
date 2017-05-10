@@ -6,19 +6,19 @@ import Ember from 'ember';
  */
 
 export default Ember.Route.extend({
-	model(params) {
-		return this.store.findRecord('worksheet', params.worksheet_id, {reload: true});
-	},
-	setupController(controller, model) {
-		controller.set('currentlyLoading', true);
-		model.reload().then( (sheet) => {
-			controller.set('currentlyLoading', false);
-			controller.set('model', sheet);
-		});
-	},
-	actions: {
+  model(params) {
+    return this.store.findRecord('worksheet', params.worksheet_id, {reload: true});
+  },
+  setupController(controller, model) {
+    controller.set('currentlyLoading', true);
+    model.reload().then( (sheet) => {
+      controller.set('currentlyLoading', false);
+      controller.set('model', sheet);
+    });
+  },
+  actions: {
     error() {
-    	this.transitionTo('index', { queryParams: { error: 'true' }});
+      this.transitionTo('index', { queryParams: { error: 'true' }});
     }
   }
 });

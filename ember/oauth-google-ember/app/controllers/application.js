@@ -7,12 +7,12 @@ const { Controller, inject, computed, observer } = Ember;
  */
 
 export default Controller.extend({
-	queryParams:        ['error'],
-	error:              null,
-	workbookController: inject.controller('workbook'),
-	title:              computed.reads('workbookController.title'),
-	isError:            computed.equal('error', 'true'),
-	observesTitle:      observer('target.url', function(sender) {
-		this.set('showTitle', sender.get('currentPath') !== 'workbooks');
-	})
+  queryParams:        ['error'],
+  error:              null,
+  workbookController: inject.controller('workbook'),
+  title:              computed.reads('workbookController.title'),
+  isError:            computed.equal('error', 'true'),
+  observesTitle:      observer('target.url', function(sender) {
+    this.set('showTitle', sender.get('currentPath') !== 'workbooks');
+  })
 });

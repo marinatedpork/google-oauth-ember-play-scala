@@ -13,15 +13,15 @@ export default Model.extend({
   workbook: belongsTo('workbook', { async: true }),
   cells:    hasMany('cell', { async: true }),
   rows:     computed('cells', function() {
-		return this.get('cells').reduce( (accum, cell) => {
-			let row = cell.get('row');
-			if (accum[row]) {
-				accum[row].push(cell);
-			} else {
-				accum[row] = [cell];
-			}
-			return accum;
-		}, [])
-		.map(row => row.sortBy('column'));
+    return this.get('cells').reduce( (accum, cell) => {
+      let row = cell.get('row');
+      if (accum[row]) {
+        accum[row].push(cell);
+      } else {
+        accum[row] = [cell];
+      }
+      return accum;
+    }, [])
+    .map(row => row.sortBy('column'));
   })
 });

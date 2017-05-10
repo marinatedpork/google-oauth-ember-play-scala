@@ -10,8 +10,8 @@ trait AuthenticatedRequest {
   /**
    * Some generic JSON to return to the front end when we get an error
    */
-  
-	val AUTH_ERROR = Json.obj(
+
+  val AUTH_ERROR = Json.obj(
     "errors" -> Json.obj(
       "authentication" -> Json.arr(JsString("You're not authenticated. Please authenticate"))
     )
@@ -27,15 +27,15 @@ trait AuthenticatedRequest {
    * @return A JSON object that is to be sent to the front end.
    */
 
-	def authenticatedRequest[T](f: Credential => JsObject)(implicit request: Request[T]): JsObject = {
-	  OAuth2.session match {
-	    case Some(cred) => 
-	      implicit val crededential = cred 
-	      f(crededential)
-	    case None => 
-	      Logger.error("Unable to retrieve refreshToken from session. Please authenticate.")
-	      AUTH_ERROR
-	  }
-	}	
+  def authenticatedRequest[T](f: Credential => JsObject)(implicit request: Request[T]): JsObject = {
+    OAuth2.session match {
+      case Some(cred) =>
+        implicit val crededential = cred
+        f(crededential)
+      case None =>
+        Logger.error("Unable to retrieve refreshToken from session. Please authenticate.")
+        AUTH_ERROR
+    }
+  }
 
 }
